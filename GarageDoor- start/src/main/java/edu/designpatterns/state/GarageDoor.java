@@ -1,23 +1,28 @@
 package edu.designpatterns.state;
 
 public class GarageDoor {
-	private String stateString = "Closed";
+	public static final String CLOSED = "Closed";
+	public static final String OPENING = "Opening";
+	public static final String CLOSING = "Closing";
+	public static final String STOPPED = "Stopped";
+	public static final String OPEN = "Open";
+	private String stateString = CLOSED;
 	private String resumeState;
 	
 
 	public void click() {
-		if ("Closed".equals(stateString)) {
-			setStateString("Opening");
-		} else if ("Opening".equals(stateString)) {
-			resumeState = "Closing";
-			setStateString("Stopped");
-		} else if ("Closing".equals(stateString)) {
-			resumeState = "Opening";
-			setStateString("Stopped");
-		} else if ("Stopped".equals(stateString)) {
+		if (CLOSED.equals(stateString)) {
+			setStateString(OPENING);
+		} else if (OPENING.equals(stateString)) {
+			resumeState = CLOSING;
+			setStateString(STOPPED);
+		} else if (CLOSING.equals(stateString)) {
+			resumeState = OPENING;
+			setStateString(STOPPED);
+		} else if (STOPPED.equals(stateString)) {
 			setStateString(resumeState);
 		} else {
-			setStateString("Closing");
+			setStateString(CLOSING);
 		}
 	}
 
@@ -30,10 +35,10 @@ public class GarageDoor {
 	}
 
 	public void sensor() {
-		if ("Opening".equals(stateString)) {
-			setStateString("Open");
+		if (OPENING.equals(stateString)) {
+			setStateString(OPEN);
 		} else {
-			setStateString("Closed");
+			setStateString(CLOSED);
 		}
 	}
 }

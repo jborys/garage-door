@@ -3,6 +3,7 @@ package edu.designpatterns.state;
 
 import org.junit.jupiter.api.Test;
 
+import static edu.designpatterns.state.GarageDoor.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class GarageDoorTest {
@@ -10,21 +11,21 @@ public class GarageDoorTest {
 	
 	@Test
 	public void initialConditionsDoorShouldBeClosed() {
-		assertDoorMessage("Closed"); // Closed
+		assertDoorMessage(CLOSED); // Closed
 	}
 
 	@Test
 	public void clickShouldStartDoorOpening() {
 		garageDoor.click(); // Opening
 		
-		assertDoorMessage("Opening");
+		assertDoorMessage(OPENING);
 	}
 
 	@Test
 	public void sensorShouldIndicateGarageDoorIsOpen() {
 		openDoor();	// Open
 		
-		assertDoorMessage("Open");
+		assertDoorMessage(OPEN);
 	}
 
 	@Test
@@ -32,7 +33,7 @@ public class GarageDoorTest {
 		openDoor();	// Open
 		garageDoor.click();	// Closing
 		
-		assertDoorMessage("Closing");
+		assertDoorMessage(CLOSING);
 	}
 
 	@Test
@@ -41,7 +42,7 @@ public class GarageDoorTest {
 		garageDoor.click(); 	// Closing
 		garageDoor.sensor();	// Closed
 		
-		assertDoorMessage("Closed");
+		assertDoorMessage(CLOSED);
 	}
 
 	@Test
@@ -58,7 +59,7 @@ public class GarageDoorTest {
 		garageDoor.click(); // Stopped
 		garageDoor.click(); // Closing
 		
-		assertDoorMessage("Closing");
+		assertDoorMessage(CLOSING);
 	}
 
 	@Test
@@ -67,7 +68,7 @@ public class GarageDoorTest {
 		garageDoor.click();	// Closing
 		garageDoor.click();	// Stopped - Closing
 		
-		assertDoorMessage("Stopped");
+		assertDoorMessage(STOPPED);
 	}
 	
 	@Test
@@ -77,7 +78,7 @@ public class GarageDoorTest {
 		garageDoor.click();	// Stopped - Closing
 		garageDoor.click();	// Opening
 		
-		assertDoorMessage("Opening");
+		assertDoorMessage(OPENING);
 	}
 	
 	// Helper methods
