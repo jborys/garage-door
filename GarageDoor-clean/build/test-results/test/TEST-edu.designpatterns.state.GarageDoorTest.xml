@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.designpatterns.state.GarageDoorTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-10-24T23:43:57" hostname="MacBook-Pro-2" time="0.038">
+  <properties/>
+  <testcase name="sensorShouldIndicateGarageDoorIsOpen()" classname="edu.designpatterns.state.GarageDoorTest" time="0.032"/>
+  <testcase name="clickWhenStoppedClosingShouldOpenDoor()" classname="edu.designpatterns.state.GarageDoorTest" time="0.001"/>
+  <testcase name="clickWhenOpeningShouldStopDoor()" classname="edu.designpatterns.state.GarageDoorTest" time="0.0"/>
+  <testcase name="sensorShouldIndicateDoorIsClosed()" classname="edu.designpatterns.state.GarageDoorTest" time="0.0"/>
+  <testcase name="clickWhenStoppedShouldCloseDoor()" classname="edu.designpatterns.state.GarageDoorTest" time="0.0"/>
+  <testcase name="clickWhileOpeningShouldStopDoor()" classname="edu.designpatterns.state.GarageDoorTest" time="0.0"/>
+  <testcase name="clickOnOpenDoorShouldStartDoorClosing()" classname="edu.designpatterns.state.GarageDoorTest" time="0.0"/>
+  <testcase name="clickShouldStartDoorOpening()" classname="edu.designpatterns.state.GarageDoorTest" time="0.0"/>
+  <testcase name="initialConditionsDoorShouldBeClosed()" classname="edu.designpatterns.state.GarageDoorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
